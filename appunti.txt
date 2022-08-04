@@ -1,7 +1,6 @@
 
 
 
-
 Tool riconosciuti come standard dalla community per la produzione di documentazione di API. Riporto quelli che a mio avviso sono i migliori:
 
 Github Wikis
@@ -9,6 +8,8 @@ Slate
 Swagger    https://swagger.io/
 
 
+Implementare un servizio REST per leggere i dati di un database MySQL, usando PHP per la generazione delle risposte HTTP (in formato JSON).
+https://www.html.it/pag/374031/il-primo-servizio-rest/
 
 
 
