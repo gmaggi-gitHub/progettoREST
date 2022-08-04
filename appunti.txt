@@ -1,4 +1,6 @@
 
+https://sites.google.com/diag.uniroma1.it/retidicalcolatori/esame
+
 
 
 Tool riconosciuti come standard dalla community per la produzione di documentazione di API. Riporto quelli che a mio avviso sono i migliori:
@@ -41,3 +43,27 @@ https://dinotraining.it/api-rest-cosa-sono-e-perche-usarle/
 LINEE GUIDA PER IL DESIGN DI REST API
 https://italiancoders.it/rest-web-api-linee-guida
 
+
+
+
+WebSocket
+https://it.wikipedia.org/wiki/WebSocket
+
+https://mochajs.org/
+
+https://docs.docker.com/get-started/
+
+https://www.docker.com/101-tutorial/
+
+https://www.docker.com/resources/what-container/
+
+https://javascript.info/js
+
+https://nodejs.org/en/
+
+Kurose Ross chap.  7
+Kurose Ross chap.  8
+
+https://www.rabbitmq.com/download.html
+
+https://www.instructables.com/Send-an-email-via-telnet/
