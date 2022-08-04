@@ -1,0 +1,42 @@
+
+
+
+
+Tool riconosciuti come standard dalla community per la produzione di documentazione di API. Riporto quelli che a mio avviso sono i migliori:
+
+Github Wikis
+Slate
+Swagger    https://swagger.io/
+
+
+
+
+
+
+bibliografia:
+
+REST API: cosa sono, come funzionano e come progettarle
+di Giuseppe Maggi
+https://devacademy.it/rest-api-cosa-sono-come-funzionano-e-come-progettarle/
+
+Cos'è un'API REST?
+https://www.redhat.com/it/topics/api/what-is-a-rest-api
+
+RESTful Web Services - La Guida
+https://www.html.it/guide/restful-web-services-la-guida/
+
+Cos'è l'API RESTful?
+https://aws.amazon.com/it/what-is/restful-api/
+
+Cos'è un'API REST?
+https://www.ibm.com/it-it/cloud/learn/rest-apis
+
+Una guida per principianti all'HTTP e REST
+https://code.tutsplus.com/it/tutorials/a-beginners-guide-to-http-and-rest--net-16340
+
+API Rest: cosa sono e perché usarle      letto
+https://dinotraining.it/api-rest-cosa-sono-e-perche-usarle/
+
+LINEE GUIDA PER IL DESIGN DI REST API
+https://italiancoders.it/rest-web-api-linee-guida
+
