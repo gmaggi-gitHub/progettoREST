@@ -13,19 +13,19 @@ per il momento le info potrebbero essere soltanto l'orario di sistema, una breve
 
 ## REQUISITI
 
-0. Il servizio REST che implementate (lo chiameremo SERV) deve offrire a terze parti delle API documentate
+1. Il servizio REST che implementate (lo chiameremo SERV) deve offrire a terze parti delle API documentate
 
-0. SERV si deve interfacciare con almeno due servizi REST di terze parti (e.g. google maps)
+1. SERV si deve interfacciare con almeno due servizi REST di terze parti (e.g. google maps)
 
-Almeno uno dei servizi REST esterni deve essere “commerciale” (es: twitter, google, facebook, pubnub, parse, firbase etc)
+1. Almeno uno dei servizi REST esterni deve essere “commerciale” (es: twitter, google, facebook, pubnub, parse, firbase etc)
 
-Almeno uno dei servizi REST esterni deve richiedere oauth (e.g. google calendar), Non è sufficiente usare oauth solo per verificare le credenziali è necessario accedere al servizio
+1. Almeno uno dei servizi REST esterni deve richiedere oauth (e.g. google calendar), Non è sufficiente usare oauth solo per verificare le credenziali è necessario accedere al servizio
 
-La soluzione deve prevedere l'uso di protocolli asincroni. Per esempio Websocket e/o AMQP (o simili es MQTT)
+1. La soluzione deve prevedere l'uso di protocolli asincroni. Per esempio Websocket e/o AMQP (o simili es MQTT)
 
-Il progetto deve prevedere l'uso di Docker e l'automazione del processo di lancio, configurazione e test
+1. Il progetto deve prevedere l'uso di Docker e l'automazione del processo di lancio, configurazione e test
 
-Il progetto deve essere su GIT (GITHUB, GITLAB ...) e documentato don un README che illustri almeno 
+1. Il progetto deve essere su GIT (GITHUB, GITLAB ...) e documentato don un README che illustri almeno 
 
 scopo del progetto
 
@@ -39,9 +39,9 @@ istruzioni per il test
 
 Documentazione delle API fornite per esempio con APIDOC
 
-Deve essere implementata una forma di CI/CD per esempio con le Github Actions
+1. Deve essere implementata una forma di CI/CD per esempio con le Github Actions
 
-Requisiti minimi di sicurezza devono essere considerati e documentati. Self-signed certificate sono più che sufficienti per gli scopi del progetto.
+1. Requisiti minimi di sicurezza devono essere considerati e documentati. Self-signed certificate sono più che sufficienti per gli scopi del progetto.
 
 ## Caratteristiche del progetto e requisiti
 
