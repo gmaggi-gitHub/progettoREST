@@ -13,9 +13,9 @@ per il momento le info potrebbero essere soltanto l'orario di sistema, una breve
 
 ## REQUISITI
 
-0.Il serv9izio REST che implementate (lo chiameremo SERV) deve offrire a terze parti delle API documentate
+0. Il servizio REST che implementate (lo chiameremo SERV) deve offrire a terze parti delle API documentate
 
-0.SERV si deve interfacciare con almeno due servizi REST di terze parti (e.g. google maps)
+0. SERV si deve interfacciare con almeno due servizi REST di terze parti (e.g. google maps)
 
 Almeno uno dei servizi REST esterni deve essere “commerciale” (es: twitter, google, facebook, pubnub, parse, firbase etc)
 
