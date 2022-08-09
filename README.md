@@ -3,19 +3,19 @@
 Un progetto didattico per il corso di Reti di Calcolatori 2022
   
 ipotesi:
-un RESTful web service per la collezione dei problemi riscontrati in fase di test di un sistema informatico.
+Un servizio REST accessibile via Web per la collezione dei problemi riscontrati in fase di test di un sistema informatico.
 
 Descrizione:
-Quando un operatore si accorge di aver visto un possibile problema, con un semplice xxxx provoca l'esecuzione di una chiamata http verso un server REST che consente l'archiviazione di una quantita di informazioni che potranno essere utili in seguito, in fase di analisi del problema da parte del progettista software.
+Quando un operatore si accorge di aver visto un possibile problema, con un semplice xxxx provoca l'esecuzione di una chiamata http verso un server REST che consente l'archiviazione di una certa quantita di informazioni che potranno essere utili poi in seguito, in fase di analisi del problema da parte del progettista software.
 
 per il momento le info potrebbero essere soltanto l'orario di sistema, una breve stringa di testo con cui l'operatore descrive il problema, e magari uno screenshot dello schermo del pc
 
 
 ## REQUISITI
 
-Il servizio REST che implementate (lo chiameremo SERV) deve offrire a terze parti delle API documentate
+0.Il serv9izio REST che implementate (lo chiameremo SERV) deve offrire a terze parti delle API documentate
 
-SERV si deve interfacciare con almeno due servizi REST di terze parti (e.g. google maps)
+0.SERV si deve interfacciare con almeno due servizi REST di terze parti (e.g. google maps)
 
 Almeno uno dei servizi REST esterni deve essere “commerciale” (es: twitter, google, facebook, pubnub, parse, firbase etc)
 
