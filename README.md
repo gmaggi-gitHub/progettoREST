@@ -23,12 +23,13 @@ per il momento le info potrebbero essere soltanto l'orario di sistema, una breve
 1. La soluzione deve prevedere l'uso di protocolli asincroni. Per esempio Websocket e/o AMQP (o simili es MQTT)
 1. Il progetto deve prevedere l'uso di Docker e l'automazione del processo di lancio, configurazione e test
 1. Il progetto deve essere su GIT (GITHUB, GITLAB ...) e documentato don un README che illustri almeno 
-scopo del progetto
-architettura di riferimento e tecnologie usate (con un diagramma)
-chiare indicazioni sul soddisfacimento dei requisiti
-istruzioni per l'installazione
-istruzioni per il test
-Documentazione delle API fornite per esempio con APIDOC
+
+    1. scopo del progetto
+    1. architettura di riferimento e tecnologie usate (con un diagramma)
+    1. chiare indicazioni sul soddisfacimento dei requisiti
+    1. istruzioni per l'installazione
+    1. istruzioni per il test
+    1. Documentazione delle API fornite per esempio con APIDOC
 1. Deve essere implementata una forma di CI/CD per esempio con le Github Actions
 1. Requisiti minimi di sicurezza devono essere considerati e documentati. Self-signed certificate sono più che sufficienti per gli scopi del progetto.
 
