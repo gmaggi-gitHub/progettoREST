@@ -3,7 +3,7 @@
 Un progetto didattico per il corso di Reti di Calcolatori 2022
   
 ipotesi:
-Un servizio REST accessibile via Web per la collezione dei problemi riscontrati in fase di test di un sistema informatico.
+Un servizio REST accessibile via Web per la collezione dei problemi che vengono riscontrati durante la fase di test di un sistema informatico.
 
 Descrizione:
 Quando un operatore si accorge di aver visto un possibile problema, con un semplice xxxx provoca l'esecuzione di una chiamata http verso un server REST che consente l'archiviazione di una certa quantita di informazioni che potranno essere utili poi in seguito, in fase di analisi del problema da parte del progettista software.
