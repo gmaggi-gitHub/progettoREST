@@ -51,25 +51,25 @@ per il momento le info potrebbero essere soltanto l'orario di sistema, una breve
 WINDOWS e macOS: Installare Docker Desktop cliccando su <https://www.docker.com/products/docker-desktop> e NodeJS su <https://nodejs.org/it/download>.
 UBUNTU: Aprire un terminale ed eseguire:
 
-$ sudo apt install nodejs
-$ sudo apt install docker
-$ sudo apt install docker-compose
+    sudo apt install nodejs
+    sudo apt install docker
+    sudo apt install docker-compose
 
 Apriamo il terminale, rechiamoci nella directory in cui vogliamo clonare la repo ed eseguiamo i seguenti comandi:
 
-$ git clone https://
+    git clone https://
 
-$ cd /xxxxxxxxxxx
-$ sudo docker-compose up -d --build
+    cd /xxxxxxxxxxx
+    sudo docker-compose up -d --build
 
 A questo punto, eseguendo
 
-$ sudo docker ps
+    sudo docker ps
 
 Per terminare:
 
-$ ^[C]
-$ sudo docker-compose down --remove
+    ^[C]
+    sudo docker-compose down --remove
 
 ## Configurazione
 
