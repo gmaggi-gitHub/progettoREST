@@ -49,15 +49,48 @@ per il momento le info potrebbero essere soltanto l'orario di sistema, una breve
 ## Istruzioni per l'installazione
 
 WINDOWS e macOS: Installare Docker Desktop cliccando su <https://www.docker.com/products/docker-desktop> e NodeJS su <https://nodejs.org/it/download>.
+
+UBUNTU in VM: installare solo Docker Engine seguendo la guida <https://docs.docker.com/engine/install/ubuntu/>
+
 UBUNTU: Aprire un terminale ed eseguire:
+(x installare docker su Ubuntu Jammy 22.04 (LTS) ad esempio):
+
+    sudo apt-get update
+    sudo apt-get install  ca-certificates curl gnupg lsb-release
+    sudo mkdir -p /etc/apt/keyrings
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    sudo apt-get update
+    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+Per provare se funziona:
+
+    sudo docker run hello-world
+
+
+
+scarica il progetto:
+
+    git clone https://
+    cd /xxxxxxxxxxx
+
+build del progetto:
+
+    sudo docker compose build
+
+ottengo errore: vediamo se serve npm...
+
+    sudo apt install npm
+
+che si e' portato anche la dipendenza di nodejs
+
+
+
 
     sudo apt install nodejs
     sudo apt install docker
     sudo apt install docker-compose
 
-Apriamo il terminale, rechiamoci nella directory in cui vogliamo clonare la repo ed eseguiamo i seguenti comandi:
-
-    git clone https://
 
     cd /xxxxxxxxxxx
     sudo docker-compose up -d --build
