@@ -1,15 +1,15 @@
 # progettoREST
 
-Un progetto didattico per il corso di Reti di Calcolatori 2022
-  
-ipotesi:
+Un progetto didattico per il corso di Reti di Calcolatori 2022.
+
+## Prima ipotesi  
+
 Un servizio REST accessibile via Web per la collezione dei problemi che vengono riscontrati durante la fase di test di un sistema informatico.
 
-Descrizione:
-Quando un operatore si accorge di aver visto un possibile problema, con un semplice xxxx provoca l'esecuzione di una chiamata http verso un server REST che consente l'archiviazione di una certa quantita di informazioni che potranno essere utili poi in seguito, in fase di analisi del problema da parte del progettista software.
+### Descrizione
 
-per il momento le info potrebbero essere soltanto l'orario di sistema, una breve stringa di testo con cui l'operatore descrive il problema, e magari uno screenshot dello schermo del pc
-
+Quando un operatore si accorge di aver visto un possibile problema, con un semplice xxxx provoca l'esecuzione di una chiamata https verso un server REST, che consente l'archiviazione di una certa quantita di informazioni che potranno essere utili poi in seguito, in fase di analisi del problema da parte del progettista software.  
+Per il momento le info potrebbero essere soltanto l'orario di sistema, una breve stringa di testo con cui l'operatore descrive il problema, e magari uno screenshot dello schermo del pc.
 
 ## REQUISITI
 
@@ -22,7 +22,7 @@ per il momento le info potrebbero essere soltanto l'orario di sistema, una breve
 1. Almeno uno dei servizi REST esterni deve richiedere oauth (e.g. google calendar), Non è sufficiente usare oauth solo per verificare le credenziali è necessario accedere al servizio
 1. La soluzione deve prevedere l'uso di protocolli asincroni. Per esempio Websocket e/o AMQP (o simili es MQTT)
 1. Il progetto deve prevedere l'uso di Docker e l'automazione del processo di lancio, configurazione e test
-1. Il progetto deve essere su GIT (GITHUB, GITLAB ...) e documentato don un README che illustri almeno 
+1. Il progetto deve essere su GIT (GITHUB, GITLAB ...) e documentato don un README che illustri almeno
 
     1. scopo del progetto
     1. architettura di riferimento e tecnologie usate (con un diagramma)
@@ -35,16 +35,17 @@ per il momento le info potrebbero essere soltanto l'orario di sistema, una breve
 
 ## Caratteristiche del progetto e requisiti
 
-- Containerizzazione dell'intero progetto (uso di Docker);
-- Utilizzo di Nginx che svolge il ruolo di web server;
-- Utilizzo di due container Node che svolgono il ruolo di application server;
-- Nginx è in grado di comunicare sulla porta 443 in https (Inserimento requisiti di sicurezza);
-- Viene utilizzato il protocollo asincrono SMTP per lo scambio di email e RabbitMQ per verificare l'avvenuto login (utilizzo di almeno un protocollo asincrono);
-- Viene fatto l'accesso a due servizi REST tra cui Google (utilizzo di almeno due servizi REST di terze parti);
-- Il servizio rest di Google è acceduto tramite OAUTH2.0 (utilizzo di OAUTH);
-- Sono implementati dei test tramite Mocha e Chai (automazione del processo di test);
-- E' implementata una forma di CI/CD tramite github actions (utilizzo delle github actions);
-- Offre API documentate tramite APIDOC (creazione API)
+- L'applicazione utilizza [Docker](https://docs.docker.com/engine/)  e [Docker Compose](https://docs.docker.com/compose/) per l'automazione del processo di lancio e configurazione (req. 6).
+- Utilizzo di Nginx che svolge il ruolo di web server.
+- Utilizzo di due container Node che svolgono il ruolo di application server.
+- Nginx comunica con protocollo sicuro (https) sulla porta 443  (req. 9).
+- Viene utilizzato il protocollo asincrono SMTP per lo scambio di email e RabbitMQ per verificare l'avvenuto login (req. 5).
+- Nodemailer per iniviare un'email di conferma della registrazione agli utenti.
+- Viene fatto l'accesso a due servizi REST esterni: Google News e Google Calendar  (req. 2).
+- Login tramite l'oauth di Google (req. 4).
+- Sono implementati dei test tramite Mocha e Chai per l'automazione del processo di test (req. 6).
+- E' implementata la CI/CD tramite github actions (req. 8).
+- Offre API documentate tramite APIDOC (req. 1).
 
 ## Istruzioni per l'installazione
 
@@ -66,8 +67,6 @@ UBUNTU: Aprire un terminale ed eseguire:
 Per provare se funziona:
 
     sudo docker run hello-world
-
-
 
 scarica il progetto:
 
