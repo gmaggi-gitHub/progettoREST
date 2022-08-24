@@ -37,10 +37,11 @@ Per il momento le info potrebbero essere soltanto l'orario di sistema, una breve
 
 - L'applicazione utilizza [Docker](https://docs.docker.com/engine/)  e [Docker Compose](https://docs.docker.com/compose/) per l'automazione del processo di lancio e configurazione (req. 6).
 - Utilizzo di Nginx che svolge il ruolo di web server.
+- Utilizzo di Apache CouchDB come database.
 - Utilizzo di due container Node che svolgono il ruolo di application server.
 - Nginx comunica con protocollo sicuro (https) sulla porta 443  (req. 9).
 - Viene utilizzato il protocollo asincrono SMTP per lo scambio di email e RabbitMQ per verificare l'avvenuto login (req. 5).
-- Nodemailer per iniviare un'email di conferma della registrazione agli utenti.
+- Nodemailer (modulo per Node.js) per iniviare un'email di conferma della registrazione agli utenti.
 - Viene fatto l'accesso a due servizi REST esterni: Google News e Google Calendar  (req. 2).
 - Login tramite l'oauth di Google (req. 4).
 - Sono implementati dei test tramite Mocha e Chai per l'automazione del processo di test (req. 6).
@@ -68,12 +69,12 @@ Per provare se funziona:
 
     sudo docker run hello-world
 
-scarica il progetto:
+ora scarica il progetto:
 
     git clone https://
     cd /xxxxxxxxxxx
 
-build del progetto:
+fai la build del progetto:
 
     sudo docker compose build
 
@@ -88,14 +89,6 @@ ok adesso e' andato piu avanti ma altro errore:
     npm ERR! code EAI_AGAIN
 
 ----
-
-    sudo apt install nodejs
-    sudo apt install docker
-    sudo apt install docker-compose
-
-
-    cd /xxxxxxxxxxx
-    sudo docker-compose up -d --build
 
 A questo punto, eseguendo
 
