@@ -35,14 +35,16 @@ Per il momento le info potrebbero essere soltanto l'orario di sistema, una breve
 
 ## Caratteristiche del progetto e requisiti
 
-- L'applicazione utilizza [Docker](https://docs.docker.com/engine/)  e [Docker Compose](https://docs.docker.com/compose/) per l'automazione del processo di lancio e configurazione (req. 6).
+- L'applicazione utilizza [Docker Engine](https://docs.docker.com/engine/)  e [Docker Compose](https://docs.docker.com/compose/) per l'automazione del processo di lancio e configurazione (req. 6).
 - Utilizzo di Nginx che svolge il ruolo di web server.
 - Utilizzo di Apache CouchDB come database.
-- Utilizzo di due container Node che svolgono il ruolo di application server.
+- Utilizzo di due container Node.js che svolgono il ruolo di application server.
 - Nginx comunica con protocollo sicuro (https) sulla porta 443  (req. 9).
 - Viene utilizzato il protocollo asincrono SMTP per lo scambio di email e RabbitMQ per verificare l'avvenuto login (req. 5).
 - Nodemailer (modulo per Node.js) per iniviare un'email di conferma della registrazione agli utenti.
-- Viene fatto l'accesso a due servizi REST esterni: Google News e Google Calendar  (req. 2).
+- Viene fatto l'accesso alle API di due servizi REST esterni (req. 2):
+    1. Google News API
+    1. [Google Calendar API](https://developers.google.com/calendar/api) 
 - Login tramite l'oauth di Google (req. 4).
 - Sono implementati dei test tramite Mocha e Chai per l'automazione del processo di test (req. 6).
 - E' implementata la CI/CD tramite github actions (req. 8).
