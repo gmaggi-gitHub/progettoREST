@@ -84,8 +84,11 @@ ottengo errore: vediamo se serve npm...
 
 che si e' portato anche la dipendenza di nodejs
 
+ok adesso e' andato piu avanti ma altro errore:
 
+    npm ERR! code EAI_AGAIN
 
+----
 
     sudo apt install nodejs
     sudo apt install docker
