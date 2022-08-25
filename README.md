@@ -44,7 +44,7 @@ Per il momento le info potrebbero essere soltanto l'orario di sistema, una breve
 - Nodemailer (modulo per Node.js) per iniviare un'email di conferma della registrazione agli utenti.
 - Viene fatto l'accesso alle API di due servizi REST esterni (req. 2):
     1. Google News API
-    1. [Google Calendar API](https://developers.google.com/calendar/api) 
+    1. [Google Calendar API](https://developers.google.com/calendar/api)
 - Login tramite l'oauth di Google (req. 4).
 - Sono implementati dei test tramite Mocha e Chai per l'automazione del processo di test (req. 6).
 - E' implementata la CI/CD tramite github actions (req. 8).
@@ -55,6 +55,10 @@ Per il momento le info potrebbero essere soltanto l'orario di sistema, una breve
 WINDOWS e macOS: Installare Docker Desktop cliccando su <https://www.docker.com/products/docker-desktop> e NodeJS su <https://nodejs.org/it/download>.
 
 UBUNTU in VM: installare solo Docker Engine seguendo la guida <https://docs.docker.com/engine/install/ubuntu/>
+
+prima di tutto puo essere utile non dover sempre mettere la password di root: abilitiamo il nostro utente a dare comandi sudo senza password. Da utente root:
+
+    echo "nome_utente  ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/nome_utente
 
 UBUNTU: Aprire un terminale ed eseguire:
 (x installare docker su Ubuntu Jammy 22.04 (LTS) ad esempio):
