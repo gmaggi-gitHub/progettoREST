@@ -75,6 +75,12 @@ Per provare se funziona:
 
     sudo docker run hello-world
 
+serve anche npm...
+
+    sudo apt install npm
+
+(che si porta anche la dipendenza di nodejs)
+
 ora scarica il progetto:
 
     git clone https://
@@ -84,17 +90,13 @@ fai la build del progetto:
 
     sudo docker compose build
 
-ottengo errore: vediamo se serve npm...
-
-    sudo apt install npm
-
-che si e' portato anche la dipendenza di nodejs
-
-ok adesso e' andato piu avanti ma altro errore:
+P.S: nel caso di errore:
 
     npm ERR! code EAI_AGAIN
 
-----
+io ho risolto eliminando una delle 2 schede di rete della mia VM.
+
+-----------------------
 
 A questo punto, eseguendo
 
