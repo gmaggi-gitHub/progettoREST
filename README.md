@@ -2,7 +2,7 @@
 
 Un progetto didattico per il corso di Reti di Calcolatori 2022
   
-ipotesi:
+## * Scopo del progetto (ipotesi):
 Un servizio REST accessibile via Web per la collezione dei problemi riscontrati in fase di test di un sistema informatico.
 
 Descrizione:
@@ -10,8 +10,11 @@ Quando un operatore si accorge di aver visto un possibile problema, con un sempl
 
 per il momento le info potrebbero essere soltanto l'orario di sistema, una breve stringa di testo con cui l'operatore descrive il problema, e magari uno screenshot dello schermo del pc
 
+## * Architettura di riferimento e tecnologie usate
 
-## REQUISITI
+## * Diagramma
+
+## * Copertura dei requisiti
 
 1. Il servizio REST che implementate (lo chiameremo SERV) deve offrire a terze parti delle API documentate
 
@@ -46,30 +49,39 @@ per il momento le info potrebbero essere soltanto l'orario di sistema, una breve
 - E' implementata una forma di CI/CD tramite github actions (utilizzo delle github actions);
 - Offre API documentate tramite APIDOC (creazione API)
 
-## Istruzioni per l'installazione
+## * Istruzioni per l'installazione
 
-WINDOWS e macOS: Installare Docker Desktop cliccando su <https://www.docker.com/products/docker-desktop> e NodeJS su <https://nodejs.org/it/download>.
+Installare Docker 
+
+ e NodeJS su <https://nodejs.org/it/download>.
 UBUNTU: Aprire un terminale ed eseguire:
 
+`
 $ sudo apt install nodejs
 $ sudo apt install docker
 $ sudo apt install docker-compose
+`
 
 Apriamo il terminale, rechiamoci nella directory in cui vogliamo clonare la repo ed eseguiamo i seguenti comandi:
 
-$ git clone https://
-
+`
+$ git clone https://xxxxx
 $ cd /xxxxxxxxxxx
 $ sudo docker-compose up -d --build
+`
 
 A questo punto, eseguendo
 
+`
 $ sudo docker ps
+`
 
 Per terminare:
 
+`
 $ ^[C]
 $ sudo docker-compose down --remove
+`
 
 ## Configurazione
 
