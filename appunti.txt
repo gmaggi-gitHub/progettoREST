@@ -8,6 +8,7 @@ Tool riconosciuti come standard dalla community per la produzione di documentazi
 Github Wikis
 Slate
 Swagger    https://swagger.io/
+APIDOC ?  (menzionato dai requisiti)
 
 
 Implementare un servizio REST per leggere i dati di un database MySQL, usando PHP per la generazione delle risposte HTTP (in formato JSON).
@@ -67,3 +68,76 @@ Kurose Ross chap.  8
 https://www.rabbitmq.com/download.html
 
 https://www.instructables.com/Send-an-email-via-telnet/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Progetti scorsi:
+
+
+
+https://github.com/TUEngineers/TravelUp            interessante
+
+https://github.com/gianbus/rc-project              medio
+
+https://github.com/StudentsHUBProject/StudentsHUB   medio
+
+https://github.com/PaoloRipani/PhotograFinder/     incompleto?
+
+https://github.com/tamerhayek00/progetto-reti	  AMQP usato per l'invio di una e-mail di conferma registrazione alla nostra applicazione
+
+https://github.com/Linch1/W3Work                  non esiste
+
+https://github.com/Uni-Progetti/EasyBooking       non esiste
+
+https://github.com/mancini-michael/Socialify	 sembra il piu semplice
+
+https://github.com/Cheroberous/test_progetto      essenziale
+
+https://github.com/Infiniteez/progettorc         buon ReadMe
+
+https://github.com/gianlucasbandi/MarcoPolo      usa maps
+
+https://gitlab.com/uniroma3/compunet/security/laziochain-code    non esiste   una persona    goberti.1837004@studenti.uniroma1.it
+
+https://github.com/saraalfano/ProgettoReti       vuoto
+
+https://github.com/Zeplicious/Pho2Song           niente di che
+
+https://github.com/dbPlain/dbPlain              usa Chart.js
+
+https://gitlab.com/r3888/bookingn               buone Istruzioni per l'installazione
+
+https://github.com/francescotedaldi/Oroscopo_RC     niente di che
+
+https://github.com/SangueSpada/ItaliaInViaggioRDC     usa diveerse API esterne tra cui Maps
+
+https://github.com/simonetablo/Progetto-RC.git     test  mocha - chai
+
+https://github.com/lucianolazzari00/ProgettoRCLTW/     niente di che
+
+https://github.com/chcola98/Progetto-Reti-di-Calcolatori       vuoto      una persona      colaizzi.1795759@studenti.uniroma1.it
+
+https://github.com/edo9300/Progetto-reti-21-22            non esiste
+
+https://github.com/confra/ProgettoRetiDiCalcolatori      sembra ben fatto forse lo guardo meglio
+
+https://github.com/matteo-cutroni/progettordc          anche questo ben fatto 
+
+https://github.com/imartin7/ProgettoReti.git          bho inglese               una persona   martinmateos.2036451@studenti.uniroma1.it
+
+https://gitlab.com/jorgeperez2/retidicalcolatori-serviziorest   privato??     una persona   perezparedes.1989405@studenti.uniroma1.it	
+
+https://github.com/RosapiaL/Progetto_RetiDiCalcolatori.git      sembra scarso dal ReadMe
+
+

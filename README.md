@@ -1,20 +1,17 @@
 # progettoREST
 
-Un progetto didattico per il corso di Reti di Calcolatori 2022
-  
-## * Scopo del progetto (ipotesi):
-Un servizio REST accessibile via Web per la collezione dei problemi riscontrati in fase di test di un sistema informatico.
+Un progetto didattico per il corso di Reti di Calcolatori 2022.
 
-Descrizione:
-Quando un operatore si accorge di aver visto un possibile problema, con un semplice xxxx provoca l'esecuzione di una chiamata http verso un server REST che consente l'archiviazione di una certa quantita di informazioni che potranno essere utili poi in seguito, in fase di analisi del problema da parte del progettista software.
+## Prima ipotesi  
 
-per il momento le info potrebbero essere soltanto l'orario di sistema, una breve stringa di testo con cui l'operatore descrive il problema, e magari uno screenshot dello schermo del pc
+Un servizio REST accessibile via Web per la collezione dei problemi che vengono riscontrati durante la fase di test di un sistema informatico.
 
-## * Architettura di riferimento e tecnologie usate
+### Descrizione
 
-## * Diagramma
+Quando un operatore si accorge di aver visto un possibile problema, con un semplice xxxx provoca l'esecuzione di una chiamata https verso un server REST, che consente l'archiviazione di una certa quantita di informazioni che potranno essere utili poi in seguito, in fase di analisi del problema da parte del progettista software.  
+Per il momento le info potrebbero essere soltanto l'orario di sistema, una breve stringa di testo con cui l'operatore descrive il problema, e magari uno screenshot dello schermo del pc.
 
-## * Copertura dei requisiti
+## REQUISITI
 
 1. Il servizio REST che implementate (lo chiameremo SERV) deve offrire a terze parti delle API documentate
 
@@ -25,7 +22,7 @@ per il momento le info potrebbero essere soltanto l'orario di sistema, una breve
 1. Almeno uno dei servizi REST esterni deve richiedere oauth (e.g. google calendar), Non è sufficiente usare oauth solo per verificare le credenziali è necessario accedere al servizio
 1. La soluzione deve prevedere l'uso di protocolli asincroni. Per esempio Websocket e/o AMQP (o simili es MQTT)
 1. Il progetto deve prevedere l'uso di Docker e l'automazione del processo di lancio, configurazione e test
-1. Il progetto deve essere su GIT (GITHUB, GITLAB ...) e documentato don un README che illustri almeno 
+1. Il progetto deve essere su GIT (GITHUB, GITLAB ...) e documentato don un README che illustri almeno
 
     1. scopo del progetto
     1. architettura di riferimento e tecnologie usate (con un diagramma)
@@ -38,50 +35,77 @@ per il momento le info potrebbero essere soltanto l'orario di sistema, una breve
 
 ## Caratteristiche del progetto e requisiti
 
-- Containerizzazione dell'intero progetto (uso di Docker);
-- Utilizzo di Nginx che svolge il ruolo di web server;
-- Utilizzo di due container Node che svolgono il ruolo di application server;
-- Nginx è in grado di comunicare sulla porta 443 in https (Inserimento requisiti di sicurezza);
-- Viene utilizzato il protocollo asincrono SMTP per lo scambio di email e RabbitMQ per verificare l'avvenuto login (utilizzo di almeno un protocollo asincrono);
-- Viene fatto l'accesso a due servizi REST tra cui Google (utilizzo di almeno due servizi REST di terze parti);
-- Il servizio rest di Google è acceduto tramite OAUTH2.0 (utilizzo di OAUTH);
-- Sono implementati dei test tramite Mocha e Chai (automazione del processo di test);
-- E' implementata una forma di CI/CD tramite github actions (utilizzo delle github actions);
-- Offre API documentate tramite APIDOC (creazione API)
+- L'applicazione utilizza [Docker Engine](https://docs.docker.com/engine/)  e [Docker Compose](https://docs.docker.com/compose/) per l'automazione del processo di lancio e configurazione (req. 6).
+- Utilizzo di Nginx che svolge il ruolo di web server.
+- Utilizzo di Apache CouchDB come database.
+- Utilizzo di due container Node.js che svolgono il ruolo di application server.
+- Nginx comunica con protocollo sicuro (https) sulla porta 443  (req. 9).
+- Viene utilizzato il protocollo asincrono SMTP per lo scambio di email e RabbitMQ per verificare l'avvenuto login (req. 5).
+- Nodemailer (modulo per Node.js) per iniviare un'email di conferma della registrazione agli utenti.
+- Viene fatto l'accesso alle API di due servizi REST esterni (req. 2):
+    1. Google News API
+    1. [Google Calendar API](https://developers.google.com/calendar/api)
+- Login tramite l'oauth di Google (req. 4).
+- Sono implementati dei test tramite Mocha e Chai per l'automazione del processo di test (req. 6).
+- E' implementata la CI/CD tramite github actions (req. 8).
+- Offre API documentate tramite APIDOC (req. 1).
 
-## * Istruzioni per l'installazione
+## Istruzioni per l'installazione
 
-Installare Docker 
+WINDOWS e macOS: Installare Docker Desktop cliccando su <https://www.docker.com/products/docker-desktop> e NodeJS su <https://nodejs.org/it/download>.
 
- e NodeJS su <https://nodejs.org/it/download>.
+UBUNTU in VM: installare solo Docker Engine seguendo la guida <https://docs.docker.com/engine/install/ubuntu/>
+
+prima di tutto puo essere utile non dover sempre mettere la password di root: abilitiamo il nostro utente a dare comandi sudo senza password. Da utente root:
+
+    echo "nome_utente  ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/nome_utente
+
 UBUNTU: Aprire un terminale ed eseguire:
+(x installare docker su Ubuntu Jammy 22.04 (LTS) ad esempio):
 
-`
-$ sudo apt install nodejs
-$ sudo apt install docker
-$ sudo apt install docker-compose
-`
+    sudo apt-get update
+    sudo apt-get install  ca-certificates curl gnupg lsb-release
+    sudo mkdir -p /etc/apt/keyrings
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    sudo apt-get update
+    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
-Apriamo il terminale, rechiamoci nella directory in cui vogliamo clonare la repo ed eseguiamo i seguenti comandi:
+Per provare se funziona:
 
-`
-$ git clone https://xxxxx
-$ cd /xxxxxxxxxxx
-$ sudo docker-compose up -d --build
-`
+    sudo docker run hello-world
+
+serve anche npm...
+
+    sudo apt install npm
+
+(che si porta anche la dipendenza di nodejs)
+
+ora scarica il progetto:
+
+    git clone https://
+    cd /xxxxxxxxxxx
+
+fai la build del progetto:
+
+    sudo docker compose build
+
+P.S: nel caso di errore:
+
+    npm ERR! code EAI_AGAIN
+
+io ho risolto eliminando una delle 2 schede di rete della mia VM.
+
+-----------------------
 
 A questo punto, eseguendo
 
-`
-$ sudo docker ps
-`
+    sudo docker ps
 
 Per terminare:
 
-`
-$ ^[C]
-$ sudo docker-compose down --remove
-`
+    ^[C]
+    sudo docker-compose down --remove
 
 ## Configurazione
 
