@@ -76,12 +76,118 @@ https://www.instructables.com/Send-an-email-via-telnet/
 
 
 
+=========================
+Appunti docker:
+
+Enable BuildKit:
+To enable docker BuildKit by default, set daemon configuration in /etc/docker/daemon.json feature to true and restart the daemon. If the daemon.json file doesn’t exist, create new file called daemon.json and then add the following to the file.
+
+{
+  "features":{"buildkit" : true}
+}
+
+Restart the Docker daemon
+
+Sample application
+Let’s create a simple Node.js application that we can use as our example. Create a directory in your local machine named node-docker and follow the steps below to create a simple REST API.
+$ cd [path to your node-docker directory]
+$ npm init -y
+$ npm install ronin-server ronin-mocks
+$ touch server.js
+
+add the following code into the server.js file.
+
+const ronin = require('ronin-server')
+const mocks = require('ronin-mocks')
+const server = ronin.server()
+server.use('/', mocks.server(server.Router(), false, true))
+server.start()
+
+Test the application
+Let’s start our application and make sure it’s running properly. Open your terminal and navigate to your working directory you created.
+$ node server.js
+
+To test that the application is working properly, we’ll first POST some JSON to the API and then make a GET request to see that the data has been saved. Open a new terminal and run the following curl commands:
+$ curl --request POST \
+  --url http://localhost:8000/test \
+  --header 'content-type: application/json' \
+  --data '{"msg": "testing" }'
+
+$ curl http://localhost:8000/test
+{"code":"success","meta":{"total":1,"count":1},"payload":[{"msg":"testing","id":"31f23305-f5d0-4b4f-a16f-6f4c8ec93cf1","createDate":"2020-08-28T21:53:07.157Z"}]}
+
+where our server is running. You should now see the following requests in the server logs.
+
+2020-XX-31T16:35:08:4260  INFO: POST /test
+2020-XX-31T16:35:21:3560  INFO: GET /test
+
+Create a Dockerfile for Node.js
+Here’s the complete Dockerfile.
+
+# syntax=docker/dockerfile:1
+FROM node:12.18.1
+ENV NODE_ENV=production
+WORKDIR /app
+COPY ["package.json", "package-lock.json*", "./"]
+RUN npm install --production
+COPY . .
+CMD [ "node", "server.js" ]
+
+Create a .dockerignore file
+To improve the context load time create a .dockerignore file and add node_modules directory in it.
+
+Build image
+Let’s build our first Docker image.
+$ docker build --tag node-docker .
+
+To list images, simply run the images command.
+$ docker images
+
+Tag images
+To create a new tag for the image we built above, run the following command.
+$ docker tag node-docker:latest node-docker:v1.0.0
+
+remove image
+$ docker rmi node-docker:v1.0.0
+
+Run your image as a container
+
+Start the container and expose port 8000 to port 8000 on the host.
+$ docker run --publish 8000:8000 node-docker
+
+open a new terminal.
+$ curl --request POST   --url http://localhost:8000/test   --header 'content-type: application/json'   --data '{"msg": "testing"}'
+
+Switch back to the terminal where your container is running and you should see the POST request logged to the console.
+2020-09-01T17:36:09:8770 INFO: POST /test
+
+Run in detached mode or in the background
+$ docker run -d -p 8000:8000 node-docker
+
+List containers
+Since we ran our container in the background, how do we know if our container is running or what other containers are running on our machine?
+$ docker ps
+$ docker ps --all   (anche in stato sospeso Exited)
+
+stop the container
+$ docker stop wonderful_kalam
+
+Stop, start, and name containers
+When we stop a container, it is not removed but the status is changed to stopped and the process inside of the container is stopped. When we ran the docker ps command, the default output is to only show running containers. If we pass the --all or -a for short, we will see all containers on our system whether they are stopped or started.
+$ docker restart wonderful_kalam
+
+let’s remove them
+$ docker rm wonderful_kalam agitated_moser goofy_khayyam
+
+To name a container, we just need to pass the --name flag to the run command
+$ docker run -d -p 8000:8000 --name rest-server node-docker
 
 
 
 
 
 
+========================================
 Progetti scorsi:
 
 
