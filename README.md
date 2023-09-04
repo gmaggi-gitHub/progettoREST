@@ -54,7 +54,7 @@ Per il momento le info potrebbero essere soltanto l'orario di sistema, una breve
 
 WINDOWS e macOS: Installare Docker Desktop cliccando su <https://www.docker.com/products/docker-desktop> e NodeJS su <https://nodejs.org/it/download>.
 
-UBUNTU in VM: installare solo Docker Engine seguendo la guida <https://docs.docker.com/engine/install/ubuntu/>
+UBUNTU in VM: installare solo Docker Engine seguendo la guida <https://docs.docker.com/engine/install/ubuntu/> : si procede come segue
 
 prima di tutto puo essere utile non dover sempre mettere la password di root: abilitiamo il nostro utente a dare comandi sudo senza password. Da utente root:
 
@@ -64,12 +64,12 @@ UBUNTU: Aprire un terminale ed eseguire:
 (x installare docker su Ubuntu Jammy 22.04 (LTS) ad esempio):
 
     sudo apt-get update
-    sudo apt-get install  ca-certificates curl gnupg lsb-release
-    sudo mkdir -p /etc/apt/keyrings
+    sudo apt-get install ca-certificates curl gnupg
+    sudo install -m 0755 -d /etc/apt/keyrings
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    echo   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     sudo apt-get update
-    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 Per provare se funziona:
 
