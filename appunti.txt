@@ -98,7 +98,51 @@ sudo apt-get update
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
+----------------------------------------------------------------------------------------
 
+installare Docker engine  seguendo le istruzioni qui: 
+https://docs.docker.com/engine/install/ubuntu/#set-up-the-repository
+
+verifica:
+Kernel compatibility
+Docker cannot run correctly if your kernel is older than version 3.10 or if it is missing some modules. To check kernel compatibility, you can download and run the check-config.sh script.
+
+ curl https://raw.githubusercontent.com/docker/docker/master/contrib/check-config.sh > check-config.sh
+ bash ./check-config.sh
+ 
+x Lanciare senza sudo:
+To create the docker group and add your user: Create the docker group.
+
+ sudo groupadd docker
+
+Add your user to the docker group.
+
+ sudo usermod -aG docker $USER
+Log out and log back in so that your group membership is re-evaluated.
+
+verifica funzionamento :
+sudo docker run hello-world
+
+
+installare docker desktop
+....alla fine non si riesce con la mia VM va in blocco...
+serve la Kernel Virtual Machine  virtualization extensions (Intel VT or AMD-V) quindi se si tratta di una VM
+abilitare la VT nidificate
+
+creazione chiave gpg:
+gpg --generate-key
+pass init xxxxxx
+
+
+
+Differences between Docker Desktop for Linux and Docker Engine
+Docker Desktop for Linux and Docker Engine can be installed side-by-side on the same machine. Docker Desktop for Linux stores containers and images in an isolated storage location within a VM and offers controls to restrict its resources. Using a dedicated storage location for Docker Desktop prevents it from interfering with a Docker Engine installation on the same machine.
+While it’s possible to run both Docker Desktop and Docker Engine simultaneously, there may be situations where running both at the same time can cause issues. For example, when mapping network ports (-p / --publish) for containers, both Docker Desktop and Docker Engine may attempt to reserve the same port on your machine, which can lead to conflicts (“port already in use”).
+We generally recommend stopping the Docker Engine while you’re using Docker Desktop to prevent the Docker Engine from consuming resources and to prevent conflicts as described above.
+Use the following command to stop the Docker Engine service:
+
+ sudo systemctl stop docker docker.socket containerd
+----------------------------------------------------------------------------------------
 
 
 
