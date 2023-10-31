@@ -81,6 +81,33 @@ serve anche npm...
 
 (che si porta anche la dipendenza di nodejs)
 
+
+installa mysql:
+sudo apt install mariadb-client-core-10.6
+
+installa MySQL Workbench:
+download pacchetto deb dal sito https://downloads.mysql.com/archives/workbench/
+e click destro, "apri con installa software"
+
+Log into MySQL using root
+
+mysql -u root
+Select the MySQL database to use
+
+use mysql;
+
+Reset the password:   (https://stackoverflow.com/questions/41645309/mysql-error-access-denied-for-user-rootlocalhost)
+ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'password';
+
+
+Flush the privileges:
+flush privileges;
+
+Restart the server
+
+quit
+
+
 ora scarica il progetto:
 
     git clone https://
