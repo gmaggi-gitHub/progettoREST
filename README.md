@@ -108,7 +108,7 @@ Restart the server
 quit
 
 
-ora scarica il progetto:
+### ora scarica il progetto:
 
     git clone https://
     cd /xxxxxxxxxxx
@@ -117,13 +117,37 @@ fai la build del progetto:
 
     sudo docker compose build
 
-P.S: nel caso di errore:
+P.S: nel caso si presenti uno di questi errori:
 
     npm ERR! code EAI_AGAIN
+    npm ERR! code ENOTFOUND
 
 io ho risolto eliminando una delle 2 schede di rete della mia VM.
 
+### Comandi utili:
+
+Per vedere la lista e la dimensione delle immagini:
+
+    docker images
+
+Per cancellare una immagine:
+
+    docker rmi <nome dell'immagine>
+
+Per eseguire una immagine come container:
+
+    docker run --publish 8000:8000 <immagine>
+
+Per interrogare un server in ascolto sulla porta 8000:
+
+    curl --request POST   --url http://localhost:8000/test   --header 'content-type: application/json'   --data '{"msg": "testing"}'
+
+
+
+
 -----------------------
+
+
 
 A questo punto, eseguendo
 
