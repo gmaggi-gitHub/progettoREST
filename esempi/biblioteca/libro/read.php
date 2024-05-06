@@ -5,7 +5,7 @@ header("Content-Type: application/json; charset=UTF-8");
 include_once '../config/database.php';
 include_once '../models/libro.php';
 // creiamo un nuovo oggetto Database e ci colleghiamo al nostro database
-$database = new Database();
+$database = new mDatabase();
 $db = $database->getConnection();
 // Creiamo un nuovo oggetto Libro
 $libro = new Libro($db);
